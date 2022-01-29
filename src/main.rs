@@ -53,7 +53,7 @@ fn app() -> Html {
     let now = Instant::now();
     let theme = &TS.themes["base16-ocean.dark"];
     let theme_time = format!("Theme load: {}", now.elapsed().as_millis());
-    let s = "pub struct Wow { hi: u64 }\nfn blah() -> u64 {}";
+    let s = include_str!("main.rs");
     let now = Instant::now();
     let html = highlighted_html_for_string(s, &PS, &syntax, theme);
     let high_time = format!("Highlight time: {}", now.elapsed().as_millis());
