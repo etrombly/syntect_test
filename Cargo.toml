@@ -1,0 +1,21 @@
+[package]
+edition = "2021"
+name = "syntect-test"
+version = "0.1.0"
+
+[dependencies]
+once_cell = "*"
+instant = { version = "0.1", features = [ "wasm-bindgen" ] }
+web-sys = "0.3.56"
+
+[dependencies.syntect]
+default-features = false
+features = ["default-fancy"]
+version = "4.6"
+
+[dependencies.yew]
+git = "https://github.com/yewstack/yew/"
+
+[profile.release]
+lto = true
+opt-level = 's'
