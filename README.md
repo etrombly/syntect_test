@@ -10,3 +10,5 @@ run with:
 ```
 trunk serve --release --open
 ```
+
+![Screenshot](/screenshot.png?raw=true)
