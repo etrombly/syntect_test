@@ -10,11 +10,16 @@ web-sys = "0.3.56"
 
 [dependencies.syntect]
 default-features = false
-features = ["default-fancy"]
-version = "4.6"
+features = [ "parsing", "html", "plist-load", "yaml-load", "dump-load", "regex-fancy" ]
+git = "https://github.com/trishume/syntect"
 
 [dependencies.yew]
 git = "https://github.com/yewstack/yew/"
+
+[build-dependencies.syntect]
+default-features = false
+features = [ "parsing", "html", "plist-load", "yaml-load", "dump-create", "regex-fancy" ]
+git = "https://github.com/trishume/syntect"
 
 [profile.release]
 lto = true

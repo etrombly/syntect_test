@@ -6,13 +6,16 @@ use instant::Instant;
 use syntect::html::highlighted_html_for_string;
 use syntect::parsing::SyntaxSet;
 use syntect::highlighting::ThemeSet;
+use syntect::dumps::from_binary;
 
 static PS: Lazy<SyntaxSet> = Lazy::new(|| {
-    SyntaxSet::load_defaults_newlines()
+    let ss_bytes = include_bytes!("../assets/ss.bin");
+    from_binary(ss_bytes)
 });
 
 static TS: Lazy<ThemeSet> = Lazy::new(|| {
-    ThemeSet::load_defaults()
+    let ts_bytes = include_bytes!("../assets/ts.bin");
+    from_binary(ts_bytes)
 });
 
 #[derive(Debug, Clone, Eq, PartialEq, Properties)]
